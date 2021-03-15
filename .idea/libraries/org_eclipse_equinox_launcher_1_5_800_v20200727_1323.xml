@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="org.eclipse.equinox.launcher_1.5.800.v20200727-1323">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/java-2019-12/cpp-2020-09/eclipse/plugins/org.eclipse.equinox.launcher_1.5.800.v20200727-1323.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
