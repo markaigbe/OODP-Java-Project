@@ -4,8 +4,7 @@ package project;
 
 import java.util.ArrayList;
 
-public class Cards {
-
+class Card {
     // instance variables
     private int diamonds;
     private int clubs;
@@ -17,6 +16,24 @@ public class Cards {
     private int jack;
     private int queen;
     private int king;
+
+    // singleton use
+    private static Card cards;
+
+    private Card(){
+    // do nothing
+    }
+
+    public static synchronized Card getCard(){
+        if(cards == null){
+            cards = new Card();
+        }
+        return cards;
+    }
+
+    public void print(String message){
+        System.out.println(message);
+    }
 
     // GENERATED
     public int getDiamonds() {
@@ -67,65 +84,66 @@ public class Cards {
         return king;
     }
 
+    // CARD TYPE + RANK
     public void configureCardRank(int card){
-         for (int i=0; i<=rank.length-1; i++){
-             rank[i] = i + 1;
-             // creating local vars to store in a deck
-             int diamondRank = rank[i];
-             int heartRank = rank[i];
-             int spadeRank = rank[i];
-             int clubRank = rank[i];
-             deck.add(diamondRank);
-             deck.add(heartRank);
-             deck.add(spadeRank);
-             deck.add(clubRank);
+        for (int i=0; i<=rank.length-1; i++){
+            rank[i] = i + 1;
+            // creating local vars to store in a deck
+            int diamondRank = rank[i];
+            int heartRank = rank[i];
+            int spadeRank = rank[i];
+            int clubRank = rank[i];
+            deck.add(diamondRank);
+            deck.add(heartRank);
+            deck.add(spadeRank);
+            deck.add(clubRank);
 
-             if(card == diamonds){
-                 ace = rank[0];
-                 jack = rank[10];
-                 queen = rank[11];
-                 king = rank[12];
-                 //System.out.println("Diamond card Number " + diamondRank);
-                 System.out.println("Full Deck: " + deck);
-             }
-             else if(card == hearts){
-                 ace = rank[0];
-                 jack = rank[10];
-                 queen = rank[11];
-                 king = rank[12];
-                 System.out.println("Heart card Number " +heartRank);
-             }
-             else if(card == clubs){
-                 ace = rank[0];
-                 jack = rank[10];
-                 queen = rank[11];
-                 king = rank[12];
-                 System.out.println("Club card Number " + clubRank);
-             }
-             else if(card == spades){
-                 ace = rank[0];
-                 jack = rank[10];
-                 queen = rank[11];
-                 king = rank[12];
-                 System.out.println("Spade card Number " + spadeRank);
-             }
-             else{
-                 System.out.println("Error with configure cards method");
-             }
-         }
+            if(card == diamonds){
+                ace = rank[0];
+                jack = rank[10];
+                queen = rank[11];
+                king = rank[12];
+                //System.out.println("Diamond card Number " + diamondRank);
+                System.out.println("Full Deck: " + deck);
+            }
+            else if(card == hearts){
+                ace = rank[0];
+                jack = rank[10];
+                queen = rank[11];
+                king = rank[12];
+                System.out.println("Heart card Number " +heartRank);
+            }
+            else if(card == clubs){
+                ace = rank[0];
+                jack = rank[10];
+                queen = rank[11];
+                king = rank[12];
+                System.out.println("Club card Number " + clubRank);
+            }
+            else if(card == spades){
+                ace = rank[0];
+                jack = rank[10];
+                queen = rank[11];
+                king = rank[12];
+                System.out.println("Spade card Number " + spadeRank);
+            }
+            else{
+                System.out.println("Error with configure cards method");
+            }
+        }
     }
 
     // card type function works
     public void checkCardType(int card){
         if(card == diamonds){
-           if (card > 0 && card <14) {
-               // do something
+            if (card > 0 && card <14) {
+                // do something
                 System.out.println("Card Type: Diamonds");
                 System.out.println("Current Card Number: " + card);
-           }
-           else{
-               System.out.println("Error with card number: must be between 1 and 13 inclusive");
-           }
+            }
+            else{
+                System.out.println("Error with card number: must be between 1 and 13 inclusive");
+            }
         }
         else if(card == clubs){
             if (card > 0 && card <14) {

@@ -6,15 +6,17 @@ public class Client {
         System.out.println();
         System.out.println("Welcome to my java game application");
 
-        //Gui gui1 = new Gui("Gui");
+        // calling gui to main
+        Gui gui = new Gui("Card Game");
 
-        // testing methods
-        Cards c1 = new Cards();
+        // testing methods + calling singleton object
+        Card cardGame = Card.getCard();
+        cardGame.print("Singleton pattern is working");
         System.out.println("-------------------");
-        c1.setDiamonds(3);
-        c1.checkCardType(c1.getDiamonds());
-        c1.configureCardRank(c1.getDiamonds());
-        System.out.println(c1.getAce());
+        cardGame.setDiamonds(3);
+        cardGame.checkCardType(cardGame.getDiamonds());
+        cardGame.configureCardRank(cardGame.getDiamonds());
+        System.out.println(cardGame.getAce());
         System.out.println("-------------------");
 
 

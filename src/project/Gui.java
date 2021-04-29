@@ -17,7 +17,7 @@ public class Gui extends JFrame {
         String[] carMake = {"Opel", "Ford", "Nissan", "Toyota"};
         String[] artists = {"Taylor Swift", "Eminem", "SlopKnot", "AC-DC"};
 
-        // creating my comboboxes and storing my arrays into them
+        // creating my combo boxes and storing my arrays into them
         JComboBox box1 = new JComboBox(carMake);
         JComboBox box2 = new JComboBox(artists);
 
