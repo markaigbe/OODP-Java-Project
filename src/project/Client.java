@@ -1,24 +1,25 @@
 package project;
 
-public class Client {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Client extends Application{
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();
+    }
+
+
     public static void main(String[] args){
-
-        System.out.println();
-        System.out.println("Welcome to my java game application");
-
-        // calling gui to main
-        Gui gui = new Gui("Card Game");
-
-        // testing methods + calling singleton object
-        Card cardGame = Card.getCard();
-        cardGame.print("Singleton pattern is working");
-        System.out.println("-------------------");
-        cardGame.setDiamonds(3);
-        cardGame.checkCardType(cardGame.getDiamonds());
-        cardGame.configureCardRank(cardGame.getDiamonds());
-        System.out.println(cardGame.getAce());
-        System.out.println("-------------------");
-
-
+        // testing methods
+        Deck deck = new Deck();
+        System.out.println(deck);
     }
 }
