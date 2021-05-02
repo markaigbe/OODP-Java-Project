@@ -11,7 +11,8 @@ public class Gui extends JFrame implements ActionListener {
 
     private static Gui gui;
 
-    //image.
+    // calling card object
+    Card deck = new Card(null, null);
     JLabel label1;
     JLabel label2;
     JLabel label3;
@@ -27,11 +28,12 @@ public class Gui extends JFrame implements ActionListener {
     private Gui() throws Exception {
         c = getContentPane();
 
+        deck.buildDeck();
         panelOne = new JPanel();
         panelTwo = new JPanel();
         panelThree = new JPanel();
 
-        image1 = new ImageIcon("G:/OODP/src/images/2_of_clubs.png");
+        image1 = Card.image;
         image2 = new ImageIcon("G:/OODP/src/images/red_back.png");
         image3 = new ImageIcon("G:/OODP/src/images/3_of_spades.png");
 
