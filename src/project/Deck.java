@@ -1,27 +1,38 @@
 package project;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Deck {
-    private ArrayList<Card> deck;
-    //private Image backOfCard;
+abstract public class Deck {
 
-    // constructor to hold a list of cards from class card
-    public Deck(ArrayList<Card> deck) {
-        this.deck = deck;
-    }
+    abstract public int getDiamonds();
+    abstract public void setDiamonds(int diamonds);
+    abstract public int getClubs();
+    abstract public void setClubs(int clubs);
+    abstract public int getHearts();
+    abstract public void setHearts(int hearts);
+    abstract public int getSpades();
+    abstract public void setSpades(int spades);
+    abstract public int getAce();
+    abstract public int getJack();
+    abstract public int getQueen();
+    abstract public int getKing();
 
-    // constructor to build list of cards
-    public Deck(){
-        List<String> suits = Card.getValidSuit();
-        List<String> cardNames = Card.getValidCardName();
-        deck = new ArrayList<>();
+    abstract public String toString();
 
-        for(String suit:suits){
-            for (String cardName:cardNames){
-                deck.add(new Card(cardName,suit));
-            }
-        }
+    public final void groupMethods(){
+        getDiamonds();
+        setDiamonds(0);
+        getClubs();
+        setClubs(0);
+        getHearts();
+        setHearts(0);
+        getSpades();
+        setSpades(0);
+        getAce();
+        getJack();
+        getKing();
+        getQueen();
+
+        toString();
     }
 }

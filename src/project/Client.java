@@ -1,25 +1,23 @@
 package project;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import java.io.IOException;
 
-public class Client extends Application{
+public class Client {
+    public static void main(String[] args) throws Exception {
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-    }
+        System.out.println();
+        System.out.println("Welcome to my java game application");
+        System.out.println();
 
-
-    public static void main(String[] args){
-        // testing methods
-        Deck deck = new Deck();
-        System.out.println(deck);
+        // Testing Card Factory
+        CardFactory cards = new CardFactory();
+        CardInterface diamond = cards.getCard("Diamonds");
+        diamond.print("");
+        CardInterface heart = cards.getCard("Hearts");
+        heart.print("");
+        CardInterface spade = cards.getCard("spades");
+        spade.print("");
+        CardInterface club = cards.getCard("Clubs");
+        club.print("");
     }
 }

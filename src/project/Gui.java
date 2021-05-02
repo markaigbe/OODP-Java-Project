@@ -2,64 +2,79 @@ package project;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 // gui class
-//public class Gui extends JFrame implements ActionListener {
+// singleton
+public class Gui extends JFrame implements ActionListener {
 
-    /*/ // singleton pattern use
     private static Gui gui;
 
-    private Gui(String title){
-        Container c = getContentPane();
+    //image.
+    JLabel label1;
+    JLabel label2;
+    JLabel label3;
+    JButton button;
+    ImageIcon image1;
+    ImageIcon image2;
+    ImageIcon image3;
+    JPanel panelOne;
+    JPanel panelTwo;
+    JPanel panelThree;
+    Container c;
 
-        JPanel panelOne = new JPanel();
-        JPanel panelTwo = new JPanel();
-        JPanel panelThree = new JPanel();
-        JPanel panelFour = new JPanel();
+    private Gui() throws Exception {
+        c = getContentPane();
 
-        // call cards
-        Card cardGame = Card.getCard();
+        panelOne = new JPanel();
+        panelTwo = new JPanel();
+        panelThree = new JPanel();
 
-        String[] artists = {"Taylor Swift", "Eminem", "SlopKnot", "AC-DC"};
-        String[] b = {"Opel", "Ford", "Nissan", "Toyota"};
-        String[] a = {"Taylor Swift", "Eminem", "SlopKnot", "AC-DC"};
+        image1 = new ImageIcon("G:/OODP/src/images/2_of_clubs.png");
+        image2 = new ImageIcon("G:/OODP/src/images/red_back.png");
+        image3 = new ImageIcon("G:/OODP/src/images/3_of_spades.png");
 
         // creating my combo boxes and storing my arrays into them
-        JOptionPane box1 = new JOptionPane(cardGame.configureCardRank(cardGame.getDiamonds()));
-        JOptionPane box2 = new JOptionPane(artists);
-        JOptionPane box3 = new JOptionPane(b);
-        JOptionPane box4 = new JOptionPane(a);
+        label1 = new JLabel(image1);
+        label2 = new JLabel(image2);
+        label3 = new JLabel(image3);
+        button = new JButton("Shuffle");
+        button.addActionListener(this);
 
         // i then add the boxes to my panels
-        panelOne.add(box1);
-        panelTwo.add(box2);
-        panelThree.add(box3);
-        panelFour.add(box4);
+        panelOne.add(button);
+        panelTwo.add(label1);
+        panelThree.add(label2);
 
         // setting the artists list on the bottom(SOUTH), and the cars lists on the top (NORTH)
-        c.add(panelOne, BorderLayout.NORTH);
-        c.add(panelTwo, BorderLayout.SOUTH);
-        c.add(panelThree, BorderLayout.EAST);
-        c.add(panelFour, BorderLayout.WEST);
+        c.add(panelOne, BorderLayout.EAST);
+        c.add(panelTwo, BorderLayout.CENTER);
+        c.add(panelThree, BorderLayout.WEST);
 
 
-        setTitle(title);
-        setSize(700,700);
+        setTitle("Card Game");
+        setSize(1920,1080);
         setVisible(true);
     }
 
-    public static synchronized Gui getGui(){
+    public static synchronized Gui getGui() throws Exception {
         if(gui == null){
-            gui = new Gui("Card Game");
+            gui = new Gui();
         }
         return gui;
     }
 
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
+        // next click
+        ImageIcon nextImg = new ImageIcon("images/3_of_spades.png");
+        label1 = new JLabel(nextImg);
+        panelTwo.add(label1);
+        c.add(panelTwo, BorderLayout.CENTER);
 
-    }*/
-//}
+        //else
+          //  System.out.println("Action method failed");
+    }
+}
