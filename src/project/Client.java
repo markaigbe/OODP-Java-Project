@@ -1,6 +1,6 @@
 package project;
 
-import java.io.IOException;
+// my 4 patterns: factory, singleton, composite, template
 
 public class Client {
     public static void main(String[] args) throws Exception {
@@ -27,7 +27,8 @@ public class Client {
         Club template = new Club();
         template.groupMethods();
 
-        // Testing Singleton
-        Gui gui = Gui.getGui();
+        // Testing Singleton pattern
+        // System.out.println("Singleton Pattern test: ");
+        // Gui gui = Gui.getGui();
     }
 }

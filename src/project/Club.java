@@ -24,7 +24,7 @@ public class Club extends CardHandler implements CardInterface {
     // calling interface function
     @Override
     public void print(String message){
-        message = "Diamonds";
+        message = "Club";
         System.out.println("Card is: " + message);
     }
 }

@@ -25,7 +25,7 @@ public class Heart extends CardHandler implements CardInterface{
     // calling interface function
     @Override
     public void print(String message){
-        message = "Diamonds";
+        message = "Heart";
         System.out.println("Card is: " + message);
     }
 
