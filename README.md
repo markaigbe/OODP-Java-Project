@@ -1,2 +1,2 @@
 # OODP
-OODP project
+OODP card game project
